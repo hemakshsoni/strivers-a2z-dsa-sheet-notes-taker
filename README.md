@@ -89,7 +89,19 @@ Chrome uses **Manifest V3** which is more restrictive — it requires three sepa
 
 Download and install from [nodejs.org](https://nodejs.org) (LTS version).
 
-### Step 2: Configure the server
+### Step 2: Clone the Repository
+
+```bash
+git clone https://github.com/hemakshsoni/strivers-a2z-dsa-sheet-notes-taker.git
+```
+
+### Step 3: Enter the folder
+
+```bash
+cd strivers-a2z-dsa-sheet-notes-taker
+```
+
+### Step 4: Configure the server
 
 Open `server.js` and change line 10 to your actual notes folder path:
 
@@ -99,7 +111,7 @@ const NOTES_PATH = "C:\\Users\\YourUsername\\TUF Notes";
 
 > Note the double backslashes — required in JS strings on Windows.
 
-### Step 3: Test the server
+### Step 5: Test the server
 
 Open a terminal in the `a2z-sheet-notes-server` folder and run:
 
@@ -116,7 +128,7 @@ You should see:
 
 Press `Ctrl+C` to stop it for now.
 
-### Step 4: Install the extension
+### Step 6: Install the extension
 
 #### Firefox / Zen / Librewolf
 
