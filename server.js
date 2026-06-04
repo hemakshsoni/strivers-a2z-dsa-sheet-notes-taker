@@ -6,7 +6,7 @@ const https = require("https");
 // ============================================================
 // CONFIG
 // ============================================================
-const NOTES_PATH = "D:\\Striver Sheet\\DSA new"; // Change this to your folder
+const NOTES_PATH = "C:\\Users\\YourUsername\\TUF Notes"; // Change this to your folder
 const PORT = 27182;
 const PROBLEM_MAP_FILE = path.join(__dirname, "problem_map.json");
 const REFRESH_INTERVAL_HOURS = 24; // Re-fetch problem map every 24 hours
