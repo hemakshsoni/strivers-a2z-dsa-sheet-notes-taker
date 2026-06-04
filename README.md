@@ -113,7 +113,7 @@ const NOTES_PATH = "C:\\Users\\YourUsername\\TUF Notes";
 
 ### Step 5: Test the server
 
-Open a terminal in the `a2z-sheet-notes-server` folder and run:
+Open a terminal in the folder and run:
 
 ```bash
 node server.js
@@ -135,16 +135,17 @@ Press `Ctrl+C` to stop it for now.
 1. Go to `about:config` in your browser
 2. Search for `xpinstall.signatures.required` and double-click to set it to `false`
 3. Go to `about:addons` → gear icon ⚙️ → **Install Add-on From File**
-4. Select `tuf-notes-firefox.zip`
+4. Select `striver-a2z-sheet-extension-firefox.zip`
 5. The extension is now permanently active ✅
 
 #### Chrome / Brave / Edge
 
-1. Go to `chrome://extensions` (or `brave://extensions` / `edge://extensions`)
-2. Enable **Developer mode** (toggle in the top right)
-3. Click **"Load unpacked"**
-4. Select the `extension-chrome` folder (not the zip)
-5. The extension is now active ✅
+1. Extract the file `striver-a2z-sheet-extension-chrome.zip`. You will get a folder named `extension-chrome` after extraction.
+2. Go to `chrome://extensions` (or `brave://extensions` / `edge://extensions`)
+3. Enable **Developer mode** (toggle in the top right)
+4. Click **"Load unpacked"**
+5. Select the `extension-chrome` folder (not the zip)
+6. The extension is now active ✅
 
 ---
 
@@ -152,18 +153,16 @@ Press `Ctrl+C` to stop it for now.
 
 So the server runs silently in the background without any terminal window.
 
-> Note: In place of `C:\Users\YourUsername\a2z-sheet-notes-server`, write your actual notes folder path wherever mentioned
+> Note: In place of `YOUR_FOLDER_PATH_HERE`, write your actual notes folder path wherever mentioned
 
-### Step 1: Create the VBS launcher
+### Step 1: Edit the VBS launcher
 
-Create `start-server.vbs` in your `a2z-sheet-notes-server` folder with this content:
+Open `start-server.vbs` file and modify the folder path to match your actual folder location:
 
 ```vbscript
 Set WshShell = CreateObject("WScript.Shell")
-WshShell.Run "cmd /c cd /d C:\Users\YourUsername\a2z-sheet-notes-server && node server.js", 0, False
+WshShell.Run "cmd /c cd /d YOUR_FOLDER_PATH_HERE && node server.js", 0, False
 ```
-
-Update the path to match your actual folder location.
 
 ### Step 2: Add to Task Scheduler
 
@@ -173,7 +172,7 @@ Update the path to match your actual folder location.
 4. Trigger: **"When I log on"**
 5. Action: **"Start a program"**
 6. Program/script: `wscript.exe`
-7. Add arguments: `"C:\Users\YourUsername\a2z-sheet-notes-server\start-server.vbs"`
+7. Add arguments: `YOUR_FOLDER_PATH_HERE`
 8. Click Finish
 
 ### Step 3: Verify it works
